@@ -6,11 +6,11 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git url: 'https://github.com/Kobidav/tf.git', branch: 'main'
-            }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //         git url: 'https://github.com/Kobidav/tf.git', branch: 'main'
+        //     }
+        // }
 
         stage('Terraform Init') {
             steps {
