@@ -40,6 +40,15 @@ pipeline {
                     '''
                 }
             }
+            sh '''
+                echo "Terraform apply completed successfully."
+            '''  
+            sh '''
+                echo "or not."
+            '''   
+            sh '''
+                echo "who knows"
+            '''        
         }
     }
 }
