@@ -38,9 +38,7 @@ pipeline {
                         export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
                         terraform apply -auto-approve
                     '''
-                }
-            }
-            sh '''
+                    sh '''
                 echo "Terraform apply completed successfully."
             '''  
             sh '''
@@ -49,6 +47,8 @@ pipeline {
             sh '''
                 echo "who knows"
             '''        
+                }
+            }
         }
     }
 }
