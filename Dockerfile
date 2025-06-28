@@ -1,1 +1,1 @@
-FROM node:lts-alpine3.21
+FROM alpine/curl:8.14.1
