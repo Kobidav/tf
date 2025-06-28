@@ -1,0 +1,36 @@
+@Library('docker') _  // Replace with your actual shared library name
+
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_NAME = "my-app:latest"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                dockerBuild(IMAGE_NAME)
+            }
+        }
+
+        stage('Test Docker Image') {
+            steps {
+                dockerTest(IMAGE_NAME, 'npm test') // Replace with your test command
+            }
+        }
+    }
+
+    post {
+        always {
+            echo "🧹 Cleaning up..."
+            sh "docker rmi ${IMAGE_NAME} || true"
+        }
+    }
+}
