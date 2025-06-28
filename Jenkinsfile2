@@ -20,7 +20,11 @@ pipeline {
                 dockerBuild(IMAGE_NAME)
             }
         }
-
+         stage('Security Scan') {
+            steps {
+                dockerScan(IMAGE_NAME)
+            }
+        }
         stage('Test Docker Image') {
             steps {
                 dockerTest(IMAGE_NAME, 'http://www.testingmcafeesites.com/testcat_ac.html') // Replace with your test command
