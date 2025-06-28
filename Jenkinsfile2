@@ -23,7 +23,7 @@ pipeline {
 
         stage('Test Docker Image') {
             steps {
-                dockerTest(IMAGE_NAME, 'npm test') // Replace with your test command
+                dockerTest(IMAGE_NAME, 'http://www.testingmcafeesites.com/testcat_ac.html') // Replace with your test command
             }
         }
     }
